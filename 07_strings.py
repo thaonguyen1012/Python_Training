@@ -276,9 +276,8 @@ def convert_to_uppercase(word):
     The syntax word.upper() invokes the upper method on the string word.
     This syntax, using a dot (.), is called dot notation. The method name (upper) follows the object name (word), and empty parentheses () indicate that the method takes no arguments.
 
-
     Param:
-    word (str): The string to be converted.
+    word: The string to be converted.
     
     Returns:
     str: The uppercase version of the string.
@@ -288,3 +287,55 @@ def convert_to_uppercase(word):
 print(convert_to_uppercase("banana"))  # 'BANANA'
 print(convert_to_uppercase("Hello, World!"))  # 'HELLO, WORLD!'
 
+def find_substring(word, substring):
+    """
+    A function that checks if the given substring is present in the given string 'word'.
+    Using the string method find()
+    The find method takes a substring as an argument and returns the index of the first occurrence of that substring in the string.
+    If the substring is not found, find returns -1. The syntax word.find(substring) invokes the find method on the string word.
+
+    Param:
+    word: The string to search in.
+    substring: The substring to find.
+
+    Returns:
+    int: The index of the first occurrence of the substring, or -1 if not found.
+    """
+    return word.find(substring)
+
+print(find_substring("banana", "na"))  # 2
+print(find_substring("Hello, World!", "World"))  # 7
+print(find_substring("Python", "Java"))  # -1
+
+# Taking a 2nd argument, the index where it shoud start
+color = 'purple'
+print(color.find('p', 2))  # 3 # The 2nd argument is the index where the search starts.
+
+# Taking a 3rd argument, the index where it shoud end
+name = 'bob'
+print(name.find('b', 1, 2)) 
+
+# Examples:
+word = 'banana'
+print(word.find('a', 1, 2)) # 1
+
+
+# 8.9 The 'in' Operator
+print('a' in 'banana') # True
+print('seed' in 'banana') # False
+
+def in_both(word1, word2):
+    """
+    A function that checks if there is any letter that appears in both word1 and word2.
+    Using the 'in' operator
+
+    Param:
+    word1: The first string.
+    word2: The second string.
+    """
+    for letter in word1:
+        if letter in word2:
+            print(letter)
+
+print(in_both('apples', 'oranges')) # a e s # The letters 'a', 'e', and 's' appear in both 'apples' and 'oranges'.
+print(in_both('programming', 'python')) 
